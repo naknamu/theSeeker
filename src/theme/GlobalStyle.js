@@ -17,6 +17,7 @@ const GlobalStyle = createGlobalStyle`
         font-size: 1.8rem;
         background-color: ${({theme}) => theme.colors.dark};
     }
+
 `;
 
 export default GlobalStyle;
