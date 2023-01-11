@@ -1,26 +1,50 @@
 [
     {
-        "id": "469f9800-c45a-483f-b13e-bd24f3fb79f4",
+        "id": "Object-001",
         "title": "Robot",
         "shape": "rect",
         "name": "1",
         "fillColor": "#eab54d4d",
         "strokeColor": "black",
         "coords": [
-          166,
-          164,
-          255,
-          378
+          216,
+          217,
+          423,
+          614
         ],
         "rect": [
           [
-            166,
-            164
+            216,
+            217
           ],
           [
-            255,
-            378
+            423,
+            614
           ]
         ]
-      }
+    },
+    {
+        "id": "Parent-Image-000",
+        "title": "Parent",
+        "shape": "rect",
+        "name": "1",
+        "fillColor": "#FFB6C14d",
+        "strokeColor": "black",
+        "coords": [
+          0,
+          0,
+          1999,
+          13110
+        ],
+        "rect": [
+          [
+            0,
+            0
+          ],
+          [
+            1999,
+            13110
+          ]
+        ]
+    }
 ]
