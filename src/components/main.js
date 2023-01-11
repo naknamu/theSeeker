@@ -1,9 +1,8 @@
 import { useState } from "react";
 import styled from "styled-components";
-// import robotCity from  "../assets/images/robot_city.jpg";
-// import chaosCity from  "../assets/images/chaos_city.jpg";
 import extendedCity from "../assets/images/extended_city.jpg";
 import Locate from "./locate";
+import Mapper from "./mapper"
 
 const Main = () => {
 
@@ -22,27 +21,30 @@ const Main = () => {
     const handleClick = (event) => {
         //get click coordinates
         let [x , y] = getCoordinates(event);
-        
+
         console.log([x , y]);
 
         let newLocation = [...location];
 
         newLocation.push(<Locate key={location.length + 1} posX={x} posY={y} />)
 
-        console.log(newLocation);
-
         setLocation(newLocation);
     }
 
+    // const handleRobot = (event) => {
+    //     console.log("Robot is clicked!");
+    // }
+
     return ( 
         <MainWrapper>
-            <ImageStyled 
+            {/* <ImageStyled 
                 src={extendedCity} 
                 alt="robot city img" 
-                onClick={(event) => handleClick(event)}
+                // onClick={(event) => handleClick(event)}
                 >
-            </ImageStyled>
-            {location}
+            </ImageStyled> */}
+            {/* {location} */}
+            <Mapper />
         </MainWrapper>
      );
 }
@@ -56,5 +58,14 @@ const MainWrapper = styled.main`
 const ImageStyled = styled.img`
     max-width: 100%;
 `;
+
+// const RobotStyled = styled.div`
+//     position: absolute;
+//     top: 143px;
+//     left: 129px;
+//     width: 143px;
+//     height: 264px;
+//     background-color: rgba(0,255,0,0.3);;
+// `;
  
 export default Main;

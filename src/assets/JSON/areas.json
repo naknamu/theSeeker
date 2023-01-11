@@ -1,0 +1,26 @@
+[
+    {
+        "id": "469f9800-c45a-483f-b13e-bd24f3fb79f4",
+        "title": "Robot",
+        "shape": "rect",
+        "name": "1",
+        "fillColor": "#eab54d4d",
+        "strokeColor": "black",
+        "coords": [
+          166,
+          164,
+          255,
+          378
+        ],
+        "rect": [
+          [
+            166,
+            164
+          ],
+          [
+            255,
+            378
+          ]
+        ]
+      }
+]
