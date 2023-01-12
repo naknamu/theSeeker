@@ -9,10 +9,16 @@ const Main = () => {
     let width = useWindowWidth();
     const [enableBox, setEnableBox] = useState(false);
     const [cursorClick, setCursorClick] = useState([{x: 0, y: 0}]);
+    const [mapClick, setMapClick] = useState("");
+    
+    const [status, setStatus] = useState({first: false, second: false, third: false});
+    const [target, setTarget] = useState({first: 'Robot', second: 'Ryuk', third: 'Patrick'});
 
     const onClickMap = (e) => {
-        console.log('Enable Box!');
+        // console.log('Enable Box!');
         setEnableBox(true);
+
+        setMapClick(e.title);
     }
 
     const getCoordinates = (event) => {
@@ -45,7 +51,16 @@ const Main = () => {
                 parentWidth={width}
                 onClickMap={e => onClickMap(e)} 
             />
-            {enableBox && <TargetingBox point={cursorClick} />}
+            {enableBox && 
+            <TargetingBox 
+                point={cursorClick} 
+                setEnableBox={setEnableBox} 
+                mapClick={mapClick} 
+                status={status}
+                setStatus={setStatus}
+                target={target}
+                windowWidth={width}
+            />}
         </MainWrapper>
      );
 }
