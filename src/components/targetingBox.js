@@ -63,8 +63,8 @@ const StyledBox = styled.div`
     display: flex;
     flex-direction: column;
     text-align: center;
-    border: ${({theme}) => theme.borders.thin};
     border-radius: 6px;
+    border: 2px solid white;
 `;
 
 const StyledElement = styled.div`
@@ -74,15 +74,16 @@ const StyledElement = styled.div`
     text-decoration: ${(props) => props.disabled ? "line-through black double 3px": "none"};
     
     &:hover {
-        background: aquamarine;
+        background: ${({theme}) => theme.colors.blue_2};
+        font-weight: bold;
     }
-    border: ${({theme}) => theme.borders.thin};
+    border: 2px solid white;
 
     &:active {
         background: greenyellow;
     }
 
-    background-color: ${(props) => props.disabled ? "gray": props.theme.colors.primary};
+    background-color: ${(props) => props.disabled ? "gray": props.theme.colors.blue};
 
     pointer-events: ${(props) => props.disabled ? "none": "null"} ;
 `;

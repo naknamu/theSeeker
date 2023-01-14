@@ -41,7 +41,7 @@ const Hero = styled.div`
 `;
 
 const Span = styled.span`
-    color: #051094;
+    color: ${({theme}) => theme.colors.blue};;
     font-weight: 700;
 `;
 
@@ -52,7 +52,7 @@ const Count = styled.button`
     width: 5rem;
     color: white;
     font-size: 3.5rem;
-    background-color: #051094;
+    background-color: ${({theme}) => theme.colors.blue};;
     border: none;
 `;
  
