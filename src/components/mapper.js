@@ -1,24 +1,24 @@
-import ImageMapper from 'react-img-mapper';
-import areas from "../assets/JSON/areas.json"
+import ImageMapper from "react-img-mapper";
+import areas from "../assets/JSON/areas.json";
 
-const Mapper = props => {
+const Mapper = (props) => {
+  const URL =
+    "https://raw.githubusercontent.com/naknamu/wheres-waldo/main/src/assets/images/extended_city.jpg";
+  const MAP = {
+    name: "my-map",
+    areas: areas,
+  };
 
-    const URL =  "https://raw.githubusercontent.com/naknamu/wheres-waldo/main/src/assets/images/extended_city.jpg";
-    const MAP = {
-      name: 'my-map',
-      areas: areas,
-    };
-    
-    return (
-        <ImageMapper 
-            src={URL} 
-            map={MAP} 
-            stayHighlighted={true} 
-            responsive={props.responsive}
-            parentWidth={props.parentWidth}
-            onClick={props.onClickMap}
-        />
-    );
-}
+  return (
+    <ImageMapper
+      src={URL}
+      map={MAP}
+      stayHighlighted={true}
+      responsive={props.responsive}
+      parentWidth={props.parentWidth}
+      onClick={props.onClickMap}
+    />
+  );
+};
 
 export default Mapper;

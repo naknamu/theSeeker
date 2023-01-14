@@ -1,98 +1,54 @@
 [
-    {
-        "id": "Object-001",
-        "title": "Robot",
-        "shape": "rect",
-        "name": "1",
-        "fillColor": "#eab54d4d",
-        "strokeColor": "black",
-        "coords": [
-          216,
-          217,
-          423,
-          614
-        ],
-        "rect": [
-          [
-            216,
-            217
-          ],
-          [
-            423,
-            614
-          ]
-        ]
-    },
-    {
-      "id": "Object-002",
-      "title": "Ryuk",
-      "shape": "rect",
-      "name": "2",
-      "fillColor": "#eab54d4d",
-      "strokeColor": "black",
-      "coords": [
-        320,
-        8534,
-        375,
-        8645
-      ],
-      "rect": [
-        [
-          320,
-          8534
-        ],
-        [
-          375,
-          8645
-        ]
-      ]
-    },
-    {
-      "id": "Object-003",
-      "title": "Patrick",
-      "shape": "rect",
-      "name": "3",
-      "fillColor": "#eab54d4d",
-      "strokeColor": "black",
-      "coords": [
-        1303,
-        11190,
-        1348,
-        11265
-      ],
-      "rect": [
-        [
-          1303,
-          11190
-        ],
-        [
-          1348,
-          11265
-        ]
-      ]
-    },
-    {
-        "id": "Parent-Image-000",
-        "title": "Parent",
-        "shape": "rect",
-        "name": "0",
-        "fillColor": "rgba(255, 255, 255, 0)",
-        "strokeColor": "black",
-        "coords": [
-          0,
-          0,
-          1999,
-          13110
-        ],
-        "rect": [
-          [
-            0,
-            0
-          ],
-          [
-            1999,
-            13110
-          ]
-        ]
-    }
+  {
+    "id": "Object-001",
+    "title": "Robot",
+    "shape": "rect",
+    "name": "1",
+    "fillColor": "#eab54d4d",
+    "strokeColor": "black",
+    "coords": [216, 217, 423, 614],
+    "rect": [
+      [216, 217],
+      [423, 614]
+    ]
+  },
+  {
+    "id": "Object-002",
+    "title": "Ryuk",
+    "shape": "rect",
+    "name": "2",
+    "fillColor": "#eab54d4d",
+    "strokeColor": "black",
+    "coords": [320, 8534, 375, 8645],
+    "rect": [
+      [320, 8534],
+      [375, 8645]
+    ]
+  },
+  {
+    "id": "Object-003",
+    "title": "Patrick",
+    "shape": "rect",
+    "name": "3",
+    "fillColor": "#eab54d4d",
+    "strokeColor": "black",
+    "coords": [1303, 11190, 1348, 11265],
+    "rect": [
+      [1303, 11190],
+      [1348, 11265]
+    ]
+  },
+  {
+    "id": "Parent-Image-000",
+    "title": "Parent",
+    "shape": "rect",
+    "name": "0",
+    "fillColor": "rgba(255, 255, 255, 0)",
+    "strokeColor": "black",
+    "coords": [0, 0, 1999, 13110],
+    "rect": [
+      [0, 0],
+      [1999, 13110]
+    ]
+  }
 ]
