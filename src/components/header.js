@@ -1,9 +1,19 @@
+import { useState } from "react";
 import styled from "styled-components";
+import ViewBox from "./viewbox";
 
-const Header = () => {
+const Header = (props) => {
+
+    const [enable, setEnable] = useState(false);
 
     const handleClick = (e) => {
-        console.log(e);
+
+        if (!enable){
+            setEnable(true);
+        } else {
+            setEnable(false);
+        }
+
     }
 
     return ( 
@@ -11,7 +21,10 @@ const Header = () => {
             <Container>
                 <Hero>seek<Span>Us</Span></Hero>
                 <div>00:00:00</div>
-                <Count onClick={e => handleClick(e)}>0</Count>
+                <ClickContainer>
+                    <Count onClick={e => handleClick(e)}>0</Count>
+                    {enable && <ViewBox status={props.status} TARGET={props.TARGET}/>}
+                </ClickContainer>
             </Container>
         </HeaderWrapper>
      );
@@ -43,6 +56,10 @@ const Hero = styled.div`
 const Span = styled.span`
     color: ${({theme}) => theme.colors.blue};;
     font-weight: 700;
+`;
+
+const ClickContainer = styled.div`
+    position: relative;
 `;
 
 const Count = styled.button`

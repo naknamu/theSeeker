@@ -4,20 +4,15 @@ import {useWindowWidth} from '@react-hook/window-size';
 import { useState } from "react";
 import TargetingBox from './targetingBox';
 
-const Main = () => {
+const Main = (props) => {
 
     let width = useWindowWidth();
     const [enableBox, setEnableBox] = useState(false);
     const [cursorClick, setCursorClick] = useState([{x: 0, y: 0}]);
     const [mapClick, setMapClick] = useState("");
-    
-    const [status, setStatus] = useState({first: false, second: false, third: false});
-    const [target, setTarget] = useState({first: 'Robot', second: 'Ryuk', third: 'Patrick'});
 
     const onClickMap = (e) => {
-        // console.log('Enable Box!');
         setEnableBox(true);
-
         setMapClick(e.title);
     }
 
@@ -32,7 +27,6 @@ const Main = () => {
     }
 
     const onClickMain = (e) => {
-        //get click coordinates
         let [x , y] = getCoordinates(e);
 
         let newPointClick = [];
@@ -56,9 +50,9 @@ const Main = () => {
                 point={cursorClick} 
                 setEnableBox={setEnableBox} 
                 mapClick={mapClick} 
-                status={status}
-                setStatus={setStatus}
-                target={target}
+                status={props.status}
+                setStatus={props.setStatus}
+                TARGET={props.TARGET}
                 windowWidth={width}
             />}
         </MainWrapper>
