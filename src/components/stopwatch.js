@@ -1,4 +1,4 @@
-import ReactStopwatch from 'react-stopwatch';
+import ReactStopwatch from "react-stopwatch";
 
 const Stopwatch = () => (
   <ReactStopwatch
@@ -9,26 +9,18 @@ const Stopwatch = () => (
     onChange={({ hours, minutes, seconds }) => {
       // do something
     }}
-    onCallback={() => console.log('Finish')}
+    onCallback={() => console.log("Finish")}
     render={({ formatted, hours, minutes, seconds }) => {
       return (
         <div>
-          <p>
-            Formatted: { formatted }
-          </p>
-          <p>
-            Hours: { hours }
-          </p>
-          <p>
-            Minutes: { minutes }
-          </p>
-          <p>
-            Seconds: { seconds }
-          </p>
+          <p>Formatted: {formatted}</p>
+          <p>Hours: {hours}</p>
+          <p>Minutes: {minutes}</p>
+          <p>Seconds: {seconds}</p>
         </div>
       );
     }}
-   />
+  />
 );
 
 export default Stopwatch;

@@ -4,9 +4,14 @@ import ViewBox from "./viewbox";
 
 const Header = (props) => {
   const [enable, setEnable] = useState(false);
+
   const [seconds, setSeconds] = useState(0);
   const [minutes, setMinutes] = useState(0);
   const [hours, setHours] = useState(0);
+
+  const [activeTime, setActiveTime] = useState(true);
+
+  const {setTime} = props;
 
   const handleClick = (e) => {
     if (!enable) {
@@ -17,22 +22,39 @@ const Header = (props) => {
   };
 
   useEffect(() => {
-    let interval = setInterval(() => {
-        setSeconds(seconds => seconds + 1);
-    }, 1000)
+    let interval = null;
+    if (activeTime) {
+      interval = setInterval(() => {
+        setSeconds((seconds) => seconds + 1);
+      }, 1000);
 
-    if (seconds === 60) {
+      if (seconds === 60) {
         setSeconds(0);
-        setMinutes(minutes => minutes + 1);
+        setMinutes((minutes) => minutes + 1);
+      }
+
+      if (minutes === 60) {
+        setMinutes(0);
+        setHours((hours) => hours + 1);
+      }
     }
 
-    if (minutes === 60) {
-        setMinutes(0);
-        setHours(hours => hours + 1);
-    }
+    setTime(
+      ("0" + hours).slice(-2) +
+        ":" +
+        ("0" + minutes).slice(-2) +
+        ":" +
+        ("0" + seconds).slice(-2)
+    );
 
     return () => clearInterval(interval);
-  }, [minutes, seconds])
+  }, [activeTime, setTime, minutes, seconds, hours]);
+
+  useEffect(() => {
+    if (props.count === 2) {
+      setActiveTime(false);
+    }
+  }, [activeTime, props.count]);
 
   return (
     <HeaderWrapper>
@@ -41,7 +63,7 @@ const Header = (props) => {
           seek<Span>Us</Span>
         </Hero>
         <TimerContainer>
-            <Timer>{('0'  + hours).slice(-2)}:{('0'  + minutes).slice(-2)}:{('0' + seconds).slice(-2)}</Timer>
+          <Timer>{props.time}</Timer>
         </TimerContainer>
         <ClickContainer>
           <Count onClick={(e) => handleClick(e)}>{props.count}</Count>
