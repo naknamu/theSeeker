@@ -6,6 +6,7 @@ const Header = (props) => {
   const [enable, setEnable] = useState(false);
   const [seconds, setSeconds] = useState(0);
   const [minutes, setMinutes] = useState(0);
+  const [hours, setHours] = useState(0);
 
   const handleClick = (e) => {
     if (!enable) {
@@ -25,10 +26,13 @@ const Header = (props) => {
         setMinutes(minutes => minutes + 1);
     }
 
+    if (minutes === 60) {
+        setMinutes(0);
+        setHours(hours => hours + 1);
+    }
+
     return () => clearInterval(interval);
-  }, [seconds])
-
-
+  }, [minutes, seconds])
 
   return (
     <HeaderWrapper>
@@ -37,7 +41,7 @@ const Header = (props) => {
           seek<Span>Us</Span>
         </Hero>
         <TimerContainer>
-            <Timer>{('0'  + minutes).slice(-2)}:{('0' + seconds).slice(-2)}</Timer>
+            <Timer>{('0'  + hours).slice(-2)}:{('0'  + minutes).slice(-2)}:{('0' + seconds).slice(-2)}</Timer>
         </TimerContainer>
         <ClickContainer>
           <Count onClick={(e) => handleClick(e)}>{props.count}</Count>
