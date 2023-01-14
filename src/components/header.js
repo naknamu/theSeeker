@@ -1,9 +1,11 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import styled from "styled-components";
 import ViewBox from "./viewbox";
 
 const Header = (props) => {
   const [enable, setEnable] = useState(false);
+  const [seconds, setSeconds] = useState(0);
+  const [minutes, setMinutes] = useState(0);
 
   const handleClick = (e) => {
     if (!enable) {
@@ -13,7 +15,20 @@ const Header = (props) => {
     }
   };
 
-  console.log(Object.keys(props.TARGET).length);
+  useEffect(() => {
+    let interval = setInterval(() => {
+        setSeconds(seconds => seconds + 1);
+    }, 1000)
+
+    if (seconds === 60) {
+        setSeconds(0);
+        setMinutes(minutes => minutes + 1);
+    }
+
+    return () => clearInterval(interval);
+  }, [seconds])
+
+
 
   return (
     <HeaderWrapper>
@@ -21,7 +36,9 @@ const Header = (props) => {
         <Hero>
           seek<Span>Us</Span>
         </Hero>
-        <div>00:00:00</div>
+        <TimerContainer>
+            <Timer>{('0'  + minutes).slice(-2)}:{('0' + seconds).slice(-2)}</Timer>
+        </TimerContainer>
         <ClickContainer>
           <Count onClick={(e) => handleClick(e)}>{props.count}</Count>
           {enable && <ViewBox status={props.status} TARGET={props.TARGET} />}
@@ -47,6 +64,7 @@ const Container = styled.div`
   display: flex;
   justify-content: space-around;
   place-items: center;
+  gap: 15rem;
 `;
 
 const Hero = styled.div`
@@ -57,6 +75,16 @@ const Hero = styled.div`
 const Span = styled.span`
   color: ${({ theme }) => theme.colors.blue};
   font-weight: 700;
+`;
+
+const TimerContainer = styled.div`
+  position: relative;
+`;
+
+const Timer = styled.div`
+  position: absolute;
+  top: -3.5rem;
+  left: -6rem;
 `;
 
 const ClickContainer = styled.div`
