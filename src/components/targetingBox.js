@@ -63,26 +63,26 @@ const StyledBox = styled.div`
     display: flex;
     flex-direction: column;
     text-align: center;
-    border: 2px solid burlywood;
+    border: ${({theme}) => theme.borders.thin};
     border-radius: 6px;
 `;
 
 const StyledElement = styled.div`
     cursor: pointer;
     padding: 1rem;
-    color: ${(props) => props.disabled ? "white": "darkred"};
+    color: ${(props) => props.disabled ? "darkred": "white"};
     text-decoration: ${(props) => props.disabled ? "line-through black double 3px": "none"};
     
     &:hover {
         background: aquamarine;
     }
-    border: 2px solid burlywood;
+    border: ${({theme}) => theme.borders.thin};
 
     &:active {
         background: greenyellow;
     }
 
-    background-color: ${(props) => props.disabled ? "gray": "palevioletred"};
+    background-color: ${(props) => props.disabled ? "gray": props.theme.colors.primary};
 
     pointer-events: ${(props) => props.disabled ? "none": "null"} ;
 `;

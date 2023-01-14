@@ -1,12 +1,17 @@
 import styled from "styled-components";
 
 const Header = () => {
+
+    const handleClick = (e) => {
+        console.log(e);
+    }
+
     return ( 
         <HeaderWrapper>
             <Container>
-                <h1>LocateUs</h1>
-                <h1>00:00:00</h1>
-                <h1>0</h1>
+                <Hero>seek<Span>Us</Span></Hero>
+                <div>00:00:00</div>
+                <Count onClick={e => handleClick(e)}>0</Count>
             </Container>
         </HeaderWrapper>
      );
@@ -19,11 +24,36 @@ const HeaderWrapper = styled.header`
     position: fixed;
     width: 100%;
     z-index: 300;
+
+    font-weight: 400;
+    font-size: 4rem;
 `;
 
 const Container = styled.div`
     display: flex;
     justify-content: space-around;
+    place-items: center;
+`;
+
+const Hero = styled.div`
+    font-weight: 900;
+    cursor: pointer;
+`;
+
+const Span = styled.span`
+    color: #051094;
+    font-weight: 700;
+`;
+
+const Count = styled.button`
+    background-color: black;
+    border-radius: 50%;
+    height: 5rem;
+    width: 5rem;
+    color: white;
+    font-size: 3.5rem;
+    background-color: #051094;
+    border: none;
 `;
  
 export default Header;
