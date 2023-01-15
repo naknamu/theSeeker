@@ -8,7 +8,13 @@ const Gameover = (props) => {
     newUser.name = e.target.value;
     newUser.time = props.time;
 
-    console.log(newUser);
+    props.setUserDatabase(newUser);
+  }
+
+  const submit = (e) => {
+    if (e.keyCode === 13){
+      console.log(props.userDatabase);
+    }
   }
 
   return (
@@ -17,7 +23,7 @@ const Gameover = (props) => {
             <Header>Congratulations!</Header>
             <div>Your time is {props.time}</div>
             <div>Enter your name: </div>
-            <Input type="text" name="username" id="username" onChange={e => storeUserDatabse(e)} />
+            <Input type="text" name="username" id="username" onChange={e => storeUserDatabse(e)} onKeyDown={e => submit(e)} />
         </Container>
     </Wrapper>
   );
