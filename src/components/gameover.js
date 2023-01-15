@@ -3,27 +3,34 @@ import styled from "styled-components";
 const Gameover = (props) => {
 
   const storeUserDatabse = (e) => {
-    let newUser = props.userDatabase;
+    let newUser = [...props.userDatabase];
+    let newObj = {};
 
-    newUser.name = e.target.value;
-    newUser.time = props.time;
+    newObj.name = e.target.value;
+    newObj.time = props.time;
+
+    newUser.push(newObj);
 
     props.setUserDatabase(newUser);
   }
 
   const submit = (e) => {
     if (e.keyCode === 13){
-      console.log(props.userDatabase);
+      enableLeaderboard();
     }
+  }
+
+  const enableLeaderboard = () => {
+      props.setLeaderboard(true);
+      props.setIsGameOver(false);
   }
 
   return (
     <Wrapper>
         <Container>
-            <Header>Congratulations!</Header>
-            <div>Your time is {props.time}</div>
-            <div>Enter your name: </div>
-            <Input type="text" name="username" id="username" onChange={e => storeUserDatabse(e)} onKeyDown={e => submit(e)} />
+            <Header>Congratulations! 🥳</Header>
+            <div>You completed in {props.time}</div>
+            <Input type="text" name="username" id="username" placeholder="Enter your name" onChange={e => storeUserDatabse(e)} onKeyDown={e => submit(e)} />
         </Container>
     </Wrapper>
   );
@@ -65,6 +72,8 @@ const Input = styled.input`
     border: none;
     outline: none;
     font-size: 2rem;
+    border-radius: 5px;
 `;
 
 export default Gameover;
+export {Wrapper, Container};
