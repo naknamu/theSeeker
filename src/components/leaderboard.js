@@ -1,8 +1,12 @@
+import { useEffect, useState } from "react";
 import styled from "styled-components";
 import { Wrapper, Container } from "./gameover";
 import Table from "./table";
 
 const Leaderboard = (props) => {
+
+  const [rankUserTime, setRankUserTime] = useState([]);
+
   const handleButtonClick = () => {
     props.setLeaderboard(false);
     props.setCount(props.TARGET_COUNT);
@@ -10,13 +14,37 @@ const Leaderboard = (props) => {
     props.setSeconds(0);
     props.setMinutes(0);
     props.setHours(0);
+
+    let resetStatus = {};
+    resetStatus.first = false;
+    resetStatus.second = false;
+    resetStatus.third = false;
+
+    props.setStatus(resetStatus);
   };
+
+  const rankUserData = () => {
+    let userDataSorted = [...props.userDatabase];
+
+    userDataSorted.sort(
+        function(a,b)
+        {
+            return a.time.localeCompare(b.time)
+        }
+    );
+
+    setRankUserTime(userDataSorted);
+  }
+
+  useEffect(() => {
+    rankUserData();
+  }, [])
 
   return (
     <Wrapper>
       <Container>
         <h1>Global Leaderboard</h1>
-        <Table userDatabase={props.userDatabase} />
+        <Table userDatabase={rankUserTime} />
         <Button onClick={() => handleButtonClick()}>Restart</Button>
       </Container>
     </Wrapper>

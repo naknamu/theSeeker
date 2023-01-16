@@ -5,6 +5,7 @@ import Gameover from "./components/gameover";
 import Leaderboard from "./components/leaderboard";
 
 function App() {
+
   const TARGET = { first: "Robot", second: "Ryuk", third: "Patrick" };
   const TARGET_COUNT = Object.keys(TARGET).length;
   const [status, setStatus] = useState({
@@ -72,6 +73,7 @@ function App() {
           setSeconds={setSeconds}
           setMinutes={setMinutes}
           setHours={setHours}
+          setStatus={setStatus}
         />
       )}
     </>
