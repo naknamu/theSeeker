@@ -16,7 +16,7 @@ const Table = (props) => {
             <tbody>
                 {userDatabase.map((i, index) => 
                     <tr key={index}>
-                        <TD>{index}</TD>
+                        <TD>{index + 1}</TD>
                         <TD>{userDatabase[index].name}</TD>
                         <TD>{userDatabase[index].time}</TD>
                     </tr>

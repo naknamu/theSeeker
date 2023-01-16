@@ -3,17 +3,11 @@ import styled from "styled-components";
 import ViewBox from "./viewbox";
 
 const Header = (props) => {
+
   const [enable, setEnable] = useState(false);
+  const {setTime, activeTime, hours, minutes, seconds, setSeconds, setMinutes, setHours} = props;
 
-  const [seconds, setSeconds] = useState(0);
-  const [minutes, setMinutes] = useState(0);
-  const [hours, setHours] = useState(0);
-
-  const [activeTime, setActiveTime] = useState(true);
-
-  const {setTime} = props;
-
-  const handleClick = (e) => {
+  const handleCountClick = () => {
     if (!enable) {
       setEnable(true);
     } else {
@@ -48,13 +42,7 @@ const Header = (props) => {
     );
 
     return () => clearInterval(interval);
-  }, [activeTime, setTime, minutes, seconds, hours]);
-
-  useEffect(() => {
-    if (props.count === 2) {
-      setActiveTime(false);
-    }
-  }, [activeTime, props.count]);
+  }, [activeTime, setTime, hours, minutes, seconds]);
 
   return (
     <HeaderWrapper>
@@ -66,7 +54,7 @@ const Header = (props) => {
           <Timer>{props.time}</Timer>
         </TimerContainer>
         <ClickContainer>
-          <Count onClick={(e) => handleClick(e)}>{props.count}</Count>
+          <Count onClick={(e) => handleCountClick(e)}>{props.count}</Count>
           {enable && <ViewBox status={props.status} TARGET={props.TARGET} />}
         </ClickContainer>
       </Container>
