@@ -20,7 +20,7 @@ function App() {
   const [hours, setHours] = useState(0);
   const [userDatabase, setUserDatabase] = useState([]);
   const [leaderboard, setLeaderboard] = useState(false);
-  
+
   const [activeTime, setActiveTime] = useState(true);
 
   useEffect(() => {
@@ -28,16 +28,24 @@ function App() {
       setActiveTime(false);
       setIsGameOver(true);
     }
-  }, [count])
+  }, [count]);
 
   return (
     <>
-      <Header TARGET={TARGET} status={status} count={count} time={time} setTime={setTime} activeTime={activeTime} seconds={seconds} setSeconds={setSeconds} 
-        minutes={minutes} 
+      <Header
+        TARGET={TARGET}
+        status={status}
+        count={count}
+        time={time}
+        setTime={setTime}
+        activeTime={activeTime}
+        seconds={seconds}
+        setSeconds={setSeconds}
+        minutes={minutes}
         setMinutes={setMinutes}
-        hours={hours} 
+        hours={hours}
         setHours={setHours}
-        />
+      />
       <Main
         TARGET={TARGET}
         status={status}
@@ -45,13 +53,27 @@ function App() {
         count={count}
         setCount={setCount}
       />
-      {isGameOver && <Gameover time={time} userDatabase={userDatabase} setUserDatabase={setUserDatabase} setLeaderboard={setLeaderboard} setIsGameOver={setIsGameOver} />}
-      {leaderboard && <Leaderboard userDatabase={userDatabase} setLeaderboard={setLeaderboard} setCount={setCount} TARGET_COUNT={TARGET_COUNT} 
-      setActiveTime={setActiveTime} 
-      setSeconds={setSeconds} 
-      setMinutes={setMinutes}
-      setHours={setHours}
-      />}
+      {isGameOver && (
+        <Gameover
+          time={time}
+          userDatabase={userDatabase}
+          setUserDatabase={setUserDatabase}
+          setLeaderboard={setLeaderboard}
+          setIsGameOver={setIsGameOver}
+        />
+      )}
+      {leaderboard && (
+        <Leaderboard
+          userDatabase={userDatabase}
+          setLeaderboard={setLeaderboard}
+          setCount={setCount}
+          TARGET_COUNT={TARGET_COUNT}
+          setActiveTime={setActiveTime}
+          setSeconds={setSeconds}
+          setMinutes={setMinutes}
+          setHours={setHours}
+        />
+      )}
     </>
   );
 }

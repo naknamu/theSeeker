@@ -3,9 +3,17 @@ import styled from "styled-components";
 import ViewBox from "./viewbox";
 
 const Header = (props) => {
-
   const [enable, setEnable] = useState(false);
-  const {setTime, activeTime, hours, minutes, seconds, setSeconds, setMinutes, setHours} = props;
+  const {
+    setTime,
+    activeTime,
+    hours,
+    minutes,
+    seconds,
+    setSeconds,
+    setMinutes,
+    setHours,
+  } = props;
 
   const handleCountClick = () => {
     if (!enable) {
