@@ -1,7 +1,21 @@
 import styled from "styled-components";
 
 const Table = (props) => {
-  const { userDatabase } = props;
+  const { rankUser } = props;
+
+  const displayMedal = (num) => {
+
+    switch (num) {
+        case 1:
+            return "🥇";
+        case 2:
+            return "🥈";
+        case 3:
+            return "🥉";
+        default:
+            return num;
+    }
+  }
 
   return (
     <TableStyled>
@@ -13,11 +27,11 @@ const Table = (props) => {
         </tr>
       </thead>
       <tbody>
-        {userDatabase.map((i, index) => (
+        {rankUser.slice(0,10).map((i, index) => (
           <tr key={index}>
-            <TD>{index + 1}</TD>
-            <TD>{userDatabase[index].name}</TD>
-            <TD>{userDatabase[index].time}</TD>
+            <TD>{displayMedal(index + 1)}</TD>
+            <TD>{rankUser[index].name}</TD>
+            <TD>{rankUser[index].time}</TD>
           </tr>
         ))}
       </tbody>

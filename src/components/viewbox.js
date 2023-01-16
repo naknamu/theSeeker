@@ -38,15 +38,13 @@ const StyledElement = styled.div`
   padding: 1rem;
   border: 1px solid white;
 
-  color: ${(props) => (props.disabled ? "darkred" : "white")};
+  border: 1px dashed ${({ theme }) => theme.colors.primary};
+
+  color: ${(props) => (props.disabled ? "darkred" : props.theme.colors.primary)};
+  
   text-decoration: ${(props) =>
     props.disabled ? "line-through black double 3px" : "none"};
-  background-color: ${(props) =>
-    props.disabled ? "gray" : props.theme.colors.blue};
-  pointer-events: ${(props) => (props.disabled ? "none" : "null")};
 
-  &:hover {
-    background: ${({ theme }) => theme.colors.blue_2};
-    font-weight: bold;
-  }
+  background-color: ${(props) =>
+    props.disabled ? "gray" : props.theme.colors.light};
 `;

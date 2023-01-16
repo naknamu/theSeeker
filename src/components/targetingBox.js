@@ -59,7 +59,7 @@ const StyledBox = styled.div`
   flex-direction: column;
   text-align: center;
   border-radius: 6px;
-  border: 1px solid white;
+  border: 1px solid ${({ theme }) => theme.colors.primary};
 
   left: ${(props) =>
     props.point.x >= props.windowWidth - 230
@@ -71,21 +71,24 @@ const StyledBox = styled.div`
 const StyledElement = styled.div`
   cursor: pointer;
   padding: 1rem;
-  border: 1px solid white;
 
-  color: ${(props) => (props.disabled ? "darkred" : "white")};
+  border: 1px dashed ${({ theme }) => theme.colors.primary};
+
+  color: ${(props) => (props.disabled ? "darkred" : props.theme.colors.primary)};
+  
   text-decoration: ${(props) =>
     props.disabled ? "line-through black double 3px" : "none"};
+
   background-color: ${(props) =>
-    props.disabled ? "gray" : props.theme.colors.blue};
+    props.disabled ? "gray" : props.theme.colors.light};
+
   pointer-events: ${(props) => (props.disabled ? "none" : "null")};
 
   &:hover {
-    background: ${({ theme }) => theme.colors.blue_2};
+    background: ${({ theme }) => theme.colors.primary};
+    color: ${({ theme }) => theme.colors.light};
     font-weight: bold;
   }
-
-  &:active {
-    background: ${({ theme }) => theme.colors.primary};
-  }
 `;
+
+export {StyledElement};

@@ -92,11 +92,17 @@ const Container = styled.div`
 const Hero = styled.div`
   font-weight: 900;
   cursor: pointer;
+  transition: transform 0.1s ease-in-out;
+
+  :hover{
+    transform: scale(1.2);
+  }
 `;
 
 const Span = styled.span`
-  color: ${({ theme }) => theme.colors.blue};
+  color: ${({ theme }) => theme.colors.secondary};
   font-weight: 700;
+  opacity: 0.8;
 `;
 
 const TimerContainer = styled.div`
@@ -106,7 +112,7 @@ const TimerContainer = styled.div`
 const Timer = styled.div`
   position: absolute;
   top: -3.5rem;
-  left: -6rem;
+  left: -10rem;
 `;
 
 const ClickContainer = styled.div`
@@ -118,10 +124,20 @@ const Count = styled.button`
   border-radius: 50%;
   height: 5rem;
   width: 5rem;
-  color: white;
-  font-size: 3.5rem;
-  background-color: ${({ theme }) => theme.colors.blue};
+  color: ${({ theme }) => theme.colors.primary};
+  background-color: ${({ theme }) => theme.colors.light};
   border: none;
+  font-size: 3.5rem;
+  font-weight: 900;
+  transition: transform 0.1s ease-in;
+
+  :hover{
+    transform: scale(1.2);
+  }
+
+  :active{
+    transform: scale(1);
+  }
 `;
 
 export default Header;

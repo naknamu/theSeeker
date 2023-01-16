@@ -5,7 +5,7 @@ import Table from "./table";
 
 const Leaderboard = (props) => {
 
-  const [rankUserTime, setRankUserTime] = useState([]);
+  const [rankUser, setRankUser] = useState([]);
 
   const handleButtonClick = () => {
     props.setLeaderboard(false);
@@ -23,28 +23,54 @@ const Leaderboard = (props) => {
     props.setStatus(resetStatus);
   };
 
-  const rankUserData = () => {
-    let userDataSorted = [...props.userDatabase];
+  const sortUserData = () => {
 
-    userDataSorted.sort(
+    let unsortedData = [...props.userDatabase];
+
+     let sortedData = unsortedData.sort(
         function(a,b)
         {
             return a.time.localeCompare(b.time)
         }
     );
 
-    setRankUserTime(userDataSorted);
+    return sortedData;
+  }
+
+  const createRankTable = (sortedData) => {
+
+    let rankData = sortedData;
+    let emptyUser = {};
+
+    //display empty row when data is less than 10 
+    for (let i=0; i<10; i++)
+    {
+        if (rankData.length < 10){
+            emptyUser.name = "";
+            emptyUser.time = "";
+    
+            rankData.push(emptyUser);
+        }
+    }
+
+    setRankUser(rankData);
+
+    return rankData;
   }
 
   useEffect(() => {
-    rankUserData();
+
+    let sortedData = sortUserData();
+
+    createRankTable(sortedData);
+
   }, [])
 
   return (
     <Wrapper>
       <Container>
-        <h1>Global Leaderboard</h1>
-        <Table userDatabase={rankUserTime} />
+        <h1>Global Leaderboard 🏆</h1>
+        <Table rankUser={rankUser} />
         <Button onClick={() => handleButtonClick()}>Restart</Button>
       </Container>
     </Wrapper>

@@ -1,40 +1,46 @@
+import { useState } from "react";
 import styled from "styled-components";
 
 const Gameover = (props) => {
-  const storeUserDatabse = (e) => {
-    let newUser = [...props.userDatabase];
-    let newObj = {};
+  const [userInput, setUserInput] = useState("");
 
-    newObj.name = e.target.value;
-    newObj.time = props.time;
-
-    newUser.push(newObj);
-
-    props.setUserDatabase(newUser);
+  const handleUserInput = (e) => {
+    setUserInput(e.target.value);
   };
 
   const submit = (e) => {
     if (e.keyCode === 13) {
+      let userData = [...props.userDatabase];
+      let newData = {};
+
+      newData.name = userInput;
+      newData.time = props.time;
+
+      userData.push(newData);
+
+      props.setUserDatabase(userData);
+
+      props.setIsGameOver(false); 
+
       enableLeaderboard();
     }
   };
 
   const enableLeaderboard = () => {
     props.setLeaderboard(true);
-    props.setIsGameOver(false);
   };
 
   return (
     <Wrapper>
       <Container>
         <Header>Congratulations! 🥳</Header>
-        <div>You completed in {props.time}</div>
+        <div>You completed in {props.time}.</div>
         <Input
           type="text"
           name="username"
           id="username"
           placeholder="Enter your name"
-          onChange={(e) => storeUserDatabse(e)}
+          onChange={(e) => handleUserInput(e)}
           onKeyDown={(e) => submit(e)}
         />
       </Container>

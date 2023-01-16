@@ -21,11 +21,10 @@ function App() {
   const [hours, setHours] = useState(0);
   const [userDatabase, setUserDatabase] = useState([]);
   const [leaderboard, setLeaderboard] = useState(false);
-
   const [activeTime, setActiveTime] = useState(true);
 
   useEffect(() => {
-    if (count === 2) {
+    if (count === 0) {
       setActiveTime(false);
       setIsGameOver(true);
     }
