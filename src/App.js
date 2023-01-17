@@ -3,6 +3,7 @@ import Main from "./components/main";
 import { useEffect, useState } from "react";
 import Gameover from "./components/gameover";
 import Leaderboard from "./components/leaderboard";
+import Start from "./components/start";
 
 function App() {
 
@@ -21,7 +22,9 @@ function App() {
   const [hours, setHours] = useState(0);
   const [userDatabase, setUserDatabase] = useState([]);
   const [leaderboard, setLeaderboard] = useState(false);
-  const [activeTime, setActiveTime] = useState(true);
+  const [activeTime, setActiveTime] = useState(false);
+
+  const [start, setStart] = useState(false);
 
   useEffect(() => {
     if (count === 0) {
@@ -75,6 +78,13 @@ function App() {
           setStatus={setStatus}
         />
       )}
+      {!start && (
+        <Start 
+          setStart={setStart}
+          setActiveTime={setActiveTime}
+        />
+      )}
+      
     </>
   );
 }
