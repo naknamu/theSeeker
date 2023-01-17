@@ -1,15 +1,15 @@
 [
   {
     "id": "Object-001",
-    "title": "Robot",
+    "title": "Ghost Rider",
     "shape": "rect",
     "name": "1",
     "fillColor": "#eab54d4d",
     "strokeColor": "black",
-    "coords": [216, 217, 423, 614],
+    "coords": [1393, 2053, 1624, 2419],
     "rect": [
-      [216, 217],
-      [423, 614]
+      [1393, 2053],
+      [1624, 2419]
     ]
   },
   {
@@ -27,15 +27,15 @@
   },
   {
     "id": "Object-003",
-    "title": "Patrick",
+    "title": "Ash",
     "shape": "rect",
     "name": "3",
     "fillColor": "#eab54d4d",
     "strokeColor": "black",
-    "coords": [1303, 11190, 1348, 11265],
+    "coords": [35, 12008, 82, 12069],
     "rect": [
-      [1303, 11190],
-      [1348, 11265]
+      [35, 12008],
+      [82, 12069]
     ]
   },
   {

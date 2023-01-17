@@ -56,7 +56,7 @@ const Header = (props) => {
     <HeaderWrapper>
       <Container>
         <Hero>
-          seek<Span>Us</Span>
+          the<Span>Seeker</Span>
         </Hero>
         <TimerContainer>
           <Timer>{props.time}</Timer>

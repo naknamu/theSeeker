@@ -7,7 +7,7 @@ import Start from "./components/start";
 
 function App() {
 
-  const TARGET = { first: "Robot", second: "Ryuk", third: "Patrick" };
+  const TARGET = { first: "Ghost Rider", second: "Ryuk", third: "Ash" };
   const TARGET_COUNT = Object.keys(TARGET).length;
   const [status, setStatus] = useState({
     first: false,
@@ -82,6 +82,7 @@ function App() {
         <Start 
           setStart={setStart}
           setActiveTime={setActiveTime}
+          TARGET={TARGET}
         />
       )}
       
