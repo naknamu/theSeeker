@@ -4,8 +4,8 @@
     "title": "Ghost Rider",
     "shape": "rect",
     "name": "1",
-    "fillColor": "#eab54d4d",
-    "strokeColor": "black",
+    "fillColor": "rgba(255, 255, 255, 0)",
+    "strokeColor": "rgba(0, 0, 0, 0)",
     "coords": [1393, 2053, 1624, 2419],
     "rect": [
       [1393, 2053],
@@ -17,8 +17,8 @@
     "title": "Ryuk",
     "shape": "rect",
     "name": "2",
-    "fillColor": "#eab54d4d",
-    "strokeColor": "black",
+    "fillColor": "rgba(255, 255, 255, 0)",
+    "strokeColor": "rgba(0, 0, 0, 0)",
     "coords": [320, 8534, 375, 8645],
     "rect": [
       [320, 8534],
@@ -30,8 +30,8 @@
     "title": "Ash",
     "shape": "rect",
     "name": "3",
-    "fillColor": "#eab54d4d",
-    "strokeColor": "black",
+    "fillColor": "rgba(255, 255, 255, 0)",
+    "strokeColor": "rgba(0, 0, 0, 0)",
     "coords": [35, 12008, 82, 12069],
     "rect": [
       [35, 12008],
@@ -44,7 +44,7 @@
     "shape": "rect",
     "name": "0",
     "fillColor": "rgba(255, 255, 255, 0)",
-    "strokeColor": "black",
+    "strokeColor": "rgba(0, 0, 0, 0)",
     "coords": [0, 0, 1999, 13110],
     "rect": [
       [0, 0],
