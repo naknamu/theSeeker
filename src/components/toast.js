@@ -41,7 +41,6 @@ const ToastStyled = styled.div`
     padding: 1rem 2rem;
     border-radius: 12px;
     color: ${(props) => props.isCorrect ? props.theme.colors.primary : props.theme.colors.light};
-    textContent: 
 `;
 
  
