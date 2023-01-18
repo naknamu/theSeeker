@@ -26,11 +26,9 @@ const Toast = (props) => {
 
 const Container = styled.div`
     position: fixed;
-    width: 100%;
-    height: 100vh;
     z-index: 600;
     top: 10rem;
-    left: 0;
+    left: 48vw;
     display: flex;
     justify-content: center;
     align-items: flex-start;
