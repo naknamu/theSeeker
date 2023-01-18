@@ -4,18 +4,17 @@ const Table = (props) => {
   const { rankUser } = props;
 
   const displayMedal = (num) => {
-
     switch (num) {
-        case 1:
-            return "🥇";
-        case 2:
-            return "🥈";
-        case 3:
-            return "🥉";
-        default:
-            return num;
+      case 1:
+        return "🥇";
+      case 2:
+        return "🥈";
+      case 3:
+        return "🥉";
+      default:
+        return num;
     }
-  }
+  };
 
   return (
     <TableStyled>
@@ -27,7 +26,7 @@ const Table = (props) => {
         </tr>
       </thead>
       <tbody>
-        {rankUser.slice(0,10).map((i, index) => (
+        {rankUser.slice(0, 10).map((i, index) => (
           <tr key={index}>
             <TD>{displayMedal(index + 1)}</TD>
             <TD>{rankUser[index].name}</TD>

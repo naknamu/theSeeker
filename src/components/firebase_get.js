@@ -1,20 +1,18 @@
-import db from './firebase_init';
+import db from "./firebase_init";
 import { collection, getDocs } from "firebase/firestore";
 
 //get project data from CLOUD FIRESTORE even if the page is refreshed or closed
-const pageRefreshed = window.onload = async function () {
+const pageRefreshed = (window.onload = async function () {
+  let userArray = [];
 
-    let userArray = [];
+  //get data
+  const queryUserRecords = await getDocs(collection(db, "users"));
 
-    //get data 
-    const queryUserRecords = await getDocs(collection(db, "users"));
+  queryUserRecords.forEach((doc) => {
+    userArray.push(doc.data());
+  });
 
-    queryUserRecords.forEach((doc) => {
-        userArray.push(doc.data());
-    })
+  return userArray;
+});
 
-    return userArray;
-
-}
-
-export {pageRefreshed};
+export { pageRefreshed };

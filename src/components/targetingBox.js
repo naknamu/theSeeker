@@ -1,9 +1,7 @@
 import styled from "styled-components";
 
 const TargetingBox = (props) => {
-
   const onClickBox = (e) => {
-
     props.setEnableToast(true);
 
     if (props.mapClick === e.target.textContent) {
@@ -81,8 +79,9 @@ const StyledElement = styled.div`
 
   border: 1px dashed ${({ theme }) => theme.colors.primary};
 
-  color: ${(props) => (props.disabled ? "darkred" : props.theme.colors.primary)};
-  
+  color: ${(props) =>
+    props.disabled ? "darkred" : props.theme.colors.primary};
+
   text-decoration: ${(props) =>
     props.disabled ? "line-through black double 3px" : "none"};
 
@@ -98,4 +97,4 @@ const StyledElement = styled.div`
   }
 `;
 
-export {StyledElement};
+export { StyledElement };

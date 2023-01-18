@@ -4,7 +4,6 @@ import { Wrapper, Container } from "./gameover";
 import Table from "./table";
 
 const Leaderboard = (props) => {
-
   const [rankUser, setRankUser] = useState([]);
 
   const handleButtonClick = () => {
@@ -25,47 +24,39 @@ const Leaderboard = (props) => {
   };
 
   const sortUserData = () => {
-
     let unsortedData = [...props.userDatabase];
 
-     let sortedData = unsortedData.sort(
-        function(a,b)
-        {
-            return a.time.localeCompare(b.time)
-        }
-    );
+    let sortedData = unsortedData.sort(function (a, b) {
+      return a.time.localeCompare(b.time);
+    });
 
     return sortedData;
-  }
+  };
 
   const createRankTable = (sortedData) => {
-
     let rankData = sortedData;
     let emptyUser = {};
 
-    //display empty row when data is less than 10 
-    for (let i=0; i<10; i++)
-    {
-        if (rankData.length < 10){
-            emptyUser.name = "";
-            emptyUser.time = "";
-    
-            rankData.push(emptyUser);
-        }
+    //display empty row when data is less than 10
+    for (let i = 0; i < 10; i++) {
+      if (rankData.length < 10) {
+        emptyUser.name = "";
+        emptyUser.time = "";
+
+        rankData.push(emptyUser);
+      }
     }
 
     setRankUser(rankData);
 
     return rankData;
-  }
+  };
 
   useEffect(() => {
-
     let sortedData = sortUserData();
 
     createRankTable(sortedData);
-
-  }, [])
+  }, []);
 
   return (
     <Wrapper>

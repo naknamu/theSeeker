@@ -39,13 +39,12 @@ const Main = (props) => {
   };
 
   useEffect(() => {
-    if (enableToast){
+    if (enableToast) {
       setTimeout(() => {
         setEnableToast(false);
-      }, 1500)
+      }, 1500);
     }
-
-  }, [enableToast])
+  }, [enableToast]);
 
   return (
     <MainWrapper onClick={(e) => onClickMain(e)}>
@@ -69,12 +68,7 @@ const Main = (props) => {
           setIsCorrect={setIsCorrect}
         />
       )}
-      {enableToast && (
-        <Toast
-          mapClick={mapClick}
-          isCorrect={isCorrect}
-        />
-      )}
+      {enableToast && <Toast mapClick={mapClick} isCorrect={isCorrect} />}
     </MainWrapper>
   );
 };

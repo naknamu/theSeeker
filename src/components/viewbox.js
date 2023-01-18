@@ -1,7 +1,7 @@
 import styled from "styled-components";
-import ghost_rider from "../assets/images/ghost_rider.png"
-import ryuk from "../assets/images/ryuk.png"
-import ash from "../assets/images/ash.png"
+import ghost_rider from "../assets/images/ghost_rider.png";
+import ryuk from "../assets/images/ryuk.png";
+import ash from "../assets/images/ash.png";
 
 const ViewBox = (props) => {
   return (
@@ -54,8 +54,9 @@ const StyledElement = styled.div`
 
   border: 1px dashed ${({ theme }) => theme.colors.primary};
 
-  color: ${(props) => (props.disabled ? "darkred" : props.theme.colors.primary)};
-  
+  color: ${(props) =>
+    props.disabled ? "darkred" : props.theme.colors.primary};
+
   text-decoration: ${(props) =>
     props.disabled ? "line-through black double 3px" : "none"};
 
@@ -63,8 +64,7 @@ const StyledElement = styled.div`
     props.disabled ? "gray" : props.theme.colors.light};
 
   > * {
-    opacity: ${(props) =>
-    props.disabled ? "0.1" : "1"};;
+    opacity: ${(props) => (props.disabled ? "0.1" : "1")};
   }
 `;
 
@@ -73,22 +73,22 @@ const TargetImage = styled.img`
 `;
 
 const Easy = styled.div`
-    color: #FFAA1D;
-    position: absolute;
-    top: 0px;
-    left: 15px;
+  color: #ffaa1d;
+  position: absolute;
+  top: 0px;
+  left: 15px;
 `;
 
 const Medium = styled.div`
-    color: black;
-    position: absolute;
-    top: 0px;
-    left: 15px;
+  color: black;
+  position: absolute;
+  top: 0px;
+  left: 15px;
 `;
 
 const Hard = styled.div`
-    color: #1e40af;
-    position: absolute;
-    top: 0px;
-    left: 10px;
+  color: #1e40af;
+  position: absolute;
+  top: 0px;
+  left: 10px;
 `;

@@ -94,7 +94,7 @@ const Hero = styled.div`
   cursor: pointer;
   transition: transform 0.1s ease-in-out;
 
-  :hover{
+  :hover {
     transform: scale(1.2);
   }
 `;
@@ -131,11 +131,11 @@ const Count = styled.button`
   font-weight: 900;
   transition: transform 0.1s ease-in;
 
-  :hover{
+  :hover {
     transform: scale(1.2);
   }
 
-  :active{
+  :active {
     transform: scale(1);
   }
 `;

@@ -4,10 +4,9 @@ import { useEffect, useState } from "react";
 import Gameover from "./components/gameover";
 import Leaderboard from "./components/leaderboard";
 import Start from "./components/start";
-import {pageRefreshed} from './components/firebase_get.js';
+import { pageRefreshed } from "./components/firebase_get.js";
 
 function App() {
-
   const TARGET = { first: "Ghost Rider", second: "Ryuk", third: "Ash" };
   const TARGET_COUNT = Object.keys(TARGET).length;
   const [status, setStatus] = useState({
@@ -35,22 +34,20 @@ function App() {
   }, [count]);
 
   useEffect(() => {
-
     const fetchDatabase = async () => {
+      let databaseArray = await pageRefreshed();
 
-        let databaseArray = await pageRefreshed();
+      let userData = [];
 
-        let userData = [];
+      databaseArray.forEach((element) => {
+        userData.push({ name: element.name, time: element.time });
+      });
 
-        databaseArray.forEach( element => {
-          userData.push({name : element.name, time : element.time});
-        });
-
-        setUserDatabase(userData);
-    }
+      setUserDatabase(userData);
+    };
 
     fetchDatabase();
-  }, [])
+  }, []);
 
   return (
     <>
@@ -99,13 +96,12 @@ function App() {
         />
       )}
       {!start && (
-        <Start 
+        <Start
           setStart={setStart}
           setActiveTime={setActiveTime}
           TARGET={TARGET}
         />
       )}
-      
     </>
   );
 }

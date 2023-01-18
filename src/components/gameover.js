@@ -1,6 +1,6 @@
 import { useState } from "react";
 import styled from "styled-components";
-import {PostFirestore} from "./firebase_post";
+import { PostFirestore } from "./firebase_post";
 
 const Gameover = (props) => {
   const [userInput, setUserInput] = useState("");
@@ -21,7 +21,7 @@ const Gameover = (props) => {
 
       props.setUserDatabase(userData);
 
-      props.setIsGameOver(false); 
+      props.setIsGameOver(false);
 
       enableLeaderboard();
 
