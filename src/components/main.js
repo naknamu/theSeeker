@@ -1,14 +1,16 @@
 import styled from "styled-components";
 import Mapper from "./mapper";
 import { useWindowWidth } from "@react-hook/window-size";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import TargetingBox from "./targetingBox";
+import Toast from "./toast";
 
 const Main = (props) => {
   let width = useWindowWidth();
   const [enableBox, setEnableBox] = useState(false);
   const [cursorClick, setCursorClick] = useState([{ x: 0, y: 0 }]);
   const [mapClick, setMapClick] = useState("");
+  const [enableToast, setEnableToast] = useState(false);
 
   const onClickMap = (e) => {
     setEnableBox(true);
@@ -35,6 +37,15 @@ const Main = (props) => {
     setCursorClick(newPointClick);
   };
 
+  useEffect(() => {
+    if (enableToast){
+      setTimeout(() => {
+        setEnableToast(false);
+      }, 1500)
+    }
+
+  }, [enableToast])
+
   return (
     <MainWrapper onClick={(e) => onClickMain(e)}>
       <Mapper
@@ -53,6 +64,12 @@ const Main = (props) => {
           windowWidth={width}
           count={props.count}
           setCount={props.setCount}
+          setEnableToast={setEnableToast}
+        />
+      )}
+      {enableToast && (
+        <Toast
+          mapClick={mapClick}
         />
       )}
     </MainWrapper>

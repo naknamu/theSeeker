@@ -1,11 +1,14 @@
 import styled from "styled-components";
 
 const TargetingBox = (props) => {
+
   const onClickBox = (e) => {
     if (props.mapClick === e.target.textContent) {
       props.setCount(props.count - 1);
 
       let newStatus = props.status;
+
+      props.setEnableToast(e.target.textContent);
 
       switch (e.target.textContent) {
         case props.TARGET.first:
