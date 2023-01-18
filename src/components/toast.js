@@ -1,10 +1,23 @@
 import styled from "styled-components";
 
 const Toast = (props) => {
+
+    const handleToastMessage = () => {
+        switch (props.isCorrect) {
+            case true:
+                return `You found ${props.mapClick}!`;
+            case false:
+                return `Keep seeking!`;
+            default:
+                console.log("Error!");
+                break;
+        }
+    }
+
     return ( 
         <Container>
-            <ToastStyled>
-                You found {props.mapClick}!
+            <ToastStyled isCorrect={props.isCorrect}>
+                {handleToastMessage()}
             </ToastStyled>
         </Container>
 
@@ -24,10 +37,11 @@ const Container = styled.div`
 `;
 
 const ToastStyled = styled.div`
-    background-color: lightgreen;
+    background-color: ${(props) => props.isCorrect ? "lightgreen" : "red"};
     padding: 1rem 2rem;
     border-radius: 12px;
-    color: ${({ theme }) => theme.colors.primary};
+    color: ${(props) => props.isCorrect ? props.theme.colors.primary : props.theme.colors.light};
+    textContent: 
 `;
 
  

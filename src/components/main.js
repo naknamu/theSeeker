@@ -11,6 +11,7 @@ const Main = (props) => {
   const [cursorClick, setCursorClick] = useState([{ x: 0, y: 0 }]);
   const [mapClick, setMapClick] = useState("");
   const [enableToast, setEnableToast] = useState(false);
+  const [isCorrect, setIsCorrect] = useState(false);
 
   const onClickMap = (e) => {
     setEnableBox(true);
@@ -65,11 +66,13 @@ const Main = (props) => {
           count={props.count}
           setCount={props.setCount}
           setEnableToast={setEnableToast}
+          setIsCorrect={setIsCorrect}
         />
       )}
       {enableToast && (
         <Toast
           mapClick={mapClick}
+          isCorrect={isCorrect}
         />
       )}
     </MainWrapper>

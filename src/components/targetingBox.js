@@ -3,12 +3,15 @@ import styled from "styled-components";
 const TargetingBox = (props) => {
 
   const onClickBox = (e) => {
+
+    props.setEnableToast(true);
+
     if (props.mapClick === e.target.textContent) {
       props.setCount(props.count - 1);
 
       let newStatus = props.status;
 
-      props.setEnableToast(e.target.textContent);
+      props.setIsCorrect(true);
 
       switch (e.target.textContent) {
         case props.TARGET.first:
@@ -26,7 +29,8 @@ const TargetingBox = (props) => {
 
       props.setStatus(newStatus);
     } else {
-      console.log("Try again!");
+      console.log("Keep seeking!");
+      props.setIsCorrect(false);
     }
 
     //disable targeting box
