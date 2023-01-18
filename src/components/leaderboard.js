@@ -14,6 +14,7 @@ const Leaderboard = (props) => {
     props.setSeconds(0);
     props.setMinutes(0);
     props.setHours(0);
+    props.setIsGameOver(false);
 
     let resetStatus = {};
     resetStatus.first = false;

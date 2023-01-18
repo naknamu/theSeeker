@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import Gameover from "./components/gameover";
 import Leaderboard from "./components/leaderboard";
 import Start from "./components/start";
+import {pageRefreshed} from './components/firebase_get.js';
 
 function App() {
 
@@ -32,6 +33,24 @@ function App() {
       setIsGameOver(true);
     }
   }, [count]);
+
+  useEffect(() => {
+
+    const fetchDatabase = async () => {
+
+        let databaseArray = await pageRefreshed();
+
+        let userData = [];
+
+        databaseArray.forEach( element => {
+          userData.push({name : element.name, time : element.time});
+        });
+
+        setUserDatabase(userData);
+    }
+
+    fetchDatabase();
+  }, [])
 
   return (
     <>
@@ -76,6 +95,7 @@ function App() {
           setMinutes={setMinutes}
           setHours={setHours}
           setStatus={setStatus}
+          setIsGameOver={setIsGameOver}
         />
       )}
       {!start && (

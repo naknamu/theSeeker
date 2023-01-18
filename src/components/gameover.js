@@ -1,5 +1,6 @@
 import { useState } from "react";
 import styled from "styled-components";
+import {PostFirestore} from "./firebase_post";
 
 const Gameover = (props) => {
   const [userInput, setUserInput] = useState("");
@@ -23,6 +24,9 @@ const Gameover = (props) => {
       props.setIsGameOver(false); 
 
       enableLeaderboard();
+
+      //STORE DATE TO FIRESTORE
+      PostFirestore(newData.name, newData.time);
     }
   };
 
