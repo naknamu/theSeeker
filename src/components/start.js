@@ -170,7 +170,7 @@ const TargetImage = styled.img`
 `;
  
 const Easy = styled.div`
-    color: green;
+    color: #FFAA1D;;
 `;
 
 const Medium = styled.div`
