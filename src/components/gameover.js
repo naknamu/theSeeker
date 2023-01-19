@@ -46,6 +46,7 @@ const Gameover = (props) => {
           placeholder="Enter your name"
           onChange={(e) => handleUserInput(e)}
           onKeyDown={(e) => submit(e)}
+          maxLength="12"
         />
       </Container>
     </Wrapper>

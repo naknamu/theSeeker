@@ -71,6 +71,10 @@ const StyledBox = styled.div`
       ? props.windowWidth - 230 + "px"
       : props.point.x + "px"};
   top: ${(props) => props.point.y + "px"};
+
+  @media all and (max-width: 480px) { 
+    width: 20%;
+  }
 `;
 
 const StyledElement = styled.div`

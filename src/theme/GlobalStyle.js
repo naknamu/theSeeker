@@ -17,6 +17,25 @@ const GlobalStyle = createGlobalStyle`
         font-size: 1.8rem;
         background-color: ${({ theme }) => theme.colors.dark};
     }
+ 
+    @media all and (min-width: 768px) and (max-width: 1024px) { 
+        html {
+            font-size: 50%;
+        }
+    }
+    
+    @media all and (min-width: 480px) and (max-width: 768px) { 
+        html {
+            font-size: 45%;
+        }
+    }
+    
+    @media all and (max-width: 480px) { 
+        html {
+            font-size: 30%;
+        }
+    }
+ 
 
 `;
 

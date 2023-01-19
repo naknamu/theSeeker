@@ -48,6 +48,10 @@ const TD = styled.td`
   border: 1px solid rgb(190, 190, 190);
   padding: 1rem 8rem;
   text-align: center;
+
+  @media all and (max-width: 480px) { 
+    padding: 1rem 4rem;
+  }
 `;
 
 export default Table;

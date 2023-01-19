@@ -75,7 +75,7 @@ const Main = (props) => {
 
 const MainWrapper = styled.main`
   position: relative;
-  top: 65px;
+  top: 0px;
   left: 0;
 `;
 

@@ -30,6 +30,10 @@ const Container = styled.div`
   display: flex;
   justify-content: center;
   align-items: flex-start;
+
+  @media all and (max-width: 480px) { 
+    left: 40%;
+  }
 `;
 
 const ToastStyled = styled.div`

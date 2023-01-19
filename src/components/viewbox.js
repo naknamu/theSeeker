@@ -40,6 +40,12 @@ const StyledBox = styled.div`
 
   left: -10rem;
   top: 7rem;
+
+  @media all and (max-width: 480px) { 
+    width: 20rem;
+    font-size: 10px;
+    left: -12rem;
+  }
 `;
 
 const StyledElement = styled.div`
@@ -77,6 +83,13 @@ const Easy = styled.div`
   position: absolute;
   top: 0px;
   left: 15px;
+
+  @media all and (max-width: 480px) { 
+    left: 1.5rem;
+    top: 1rem;
+    position: static;
+    font-size: 1.5rem;
+  }
 `;
 
 const Medium = styled.div`
@@ -84,6 +97,12 @@ const Medium = styled.div`
   position: absolute;
   top: 0px;
   left: 15px;
+
+  @media all and (max-width: 480px) { 
+    left: 1.5rem;
+    top: 1rem;
+    font-size: 1.5rem;
+  }
 `;
 
 const Hard = styled.div`
@@ -91,4 +110,10 @@ const Hard = styled.div`
   position: absolute;
   top: 0px;
   left: 10px;
+
+  @media all and (max-width: 480px) { 
+    left: 1.5rem;
+    top: 1rem;
+    font-size: 1.5rem;
+  }
 `;

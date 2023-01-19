@@ -90,6 +90,10 @@ const Button = styled.button`
     color: ${({ theme }) => theme.colors.primary};
     border: 1px solid ${({ theme }) => theme.colors.primary};
   }
+
+  @media all and (max-width: 480px) { 
+    font-size: 16px;
+  }
 `;
 
 export default Leaderboard;
