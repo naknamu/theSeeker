@@ -105,8 +105,14 @@ const Container = styled.div`
   width: 50%;
   border: 2px solid whitesmoke;
 
+  @media all and (min-width: 480px) and (max-width: 768px) {
+    gap: 3rem;
+    width: 80%;
+  }
+
   @media all and (max-width: 480px) {
     gap: 0;
+    width: 80%;
   }
 `;
 
@@ -179,6 +185,14 @@ const TargetCell = styled.div`
 
 const TargetImage = styled.img`
   width: 30%;
+
+  @media all and (min-width: 480px) and (max-width: 768px) {
+    width: 70%;
+  }
+
+  @media all and (max-width: 480px) {
+    width: 80%;
+  }
 `;
 
 const Easy = styled.div`
