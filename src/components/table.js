@@ -49,7 +49,7 @@ const TD = styled.td`
   padding: 1rem 8rem;
   text-align: center;
 
-  @media all and (max-width: 480px) { 
+  @media all and (max-width: 480px) {
     padding: 1rem 4rem;
   }
 `;

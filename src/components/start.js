@@ -105,10 +105,9 @@ const Container = styled.div`
   width: 50%;
   border: 2px solid whitesmoke;
 
-  @media all and (max-width: 480px) { 
+  @media all and (max-width: 480px) {
     gap: 0;
   }
-  
 `;
 
 const MapPreview = styled.img`
@@ -145,19 +144,19 @@ const Credit = styled.div`
 const StartBtn = styled.button`
   padding: 1rem 2rem;
   border-radius: 2rem;
-  border: 1px solid ${({theme}) => theme.colors.primary};;
-  background-color: ${({theme}) => theme.colors.primary};
-  color: ${({theme}) => theme.colors.light};
+  border: 1px solid ${({ theme }) => theme.colors.primary};
+  background-color: ${({ theme }) => theme.colors.primary};
+  color: ${({ theme }) => theme.colors.light};
   font-size: 2.5rem;
   margin-top: 3rem;
 
-  :hover{
-    background-color: ${({theme}) => theme.colors.light};
-    color: ${({theme}) => theme.colors.primary};
-    border: 1px solid ${({theme}) => theme.colors.primary};
+  :hover {
+    background-color: ${({ theme }) => theme.colors.light};
+    color: ${({ theme }) => theme.colors.primary};
+    border: 1px solid ${({ theme }) => theme.colors.primary};
   }
 
-  @media all and (max-width: 480px) { 
+  @media all and (max-width: 480px) {
     font-size: 1.5rem;
     padding: 0.5rem 1.5rem;
   }
@@ -169,12 +168,12 @@ const TargetCell = styled.div`
   gap: 4rem;
   align-items: center;
 
-  @media all and (min-width: 480px) and (max-width: 768px) { 
-      gap: 3rem;
-    }
+  @media all and (min-width: 480px) and (max-width: 768px) {
+    gap: 3rem;
+  }
 
-  @media all and (max-width: 480px) { 
-      gap: 2rem;
+  @media all and (max-width: 480px) {
+    gap: 2rem;
   }
 `;
 

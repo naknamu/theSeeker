@@ -41,7 +41,7 @@ const StyledBox = styled.div`
   left: -10rem;
   top: 7rem;
 
-  @media all and (max-width: 480px) { 
+  @media all and (max-width: 480px) {
     width: 20rem;
     font-size: 10px;
     left: -12rem;
@@ -84,7 +84,7 @@ const Easy = styled.div`
   top: 0px;
   left: 15px;
 
-  @media all and (max-width: 480px) { 
+  @media all and (max-width: 480px) {
     left: 1.5rem;
     top: 1rem;
     position: static;
@@ -98,7 +98,7 @@ const Medium = styled.div`
   top: 0px;
   left: 15px;
 
-  @media all and (max-width: 480px) { 
+  @media all and (max-width: 480px) {
     left: 1.5rem;
     top: 1rem;
     font-size: 1.5rem;
@@ -111,7 +111,7 @@ const Hard = styled.div`
   top: 0px;
   left: 10px;
 
-  @media all and (max-width: 480px) { 
+  @media all and (max-width: 480px) {
     left: 1.5rem;
     top: 1rem;
     font-size: 1.5rem;

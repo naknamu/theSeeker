@@ -72,7 +72,7 @@ const StyledBox = styled.div`
       : props.point.x + "px"};
   top: ${(props) => props.point.y + "px"};
 
-  @media all and (max-width: 480px) { 
+  @media all and (max-width: 480px) {
     width: 20%;
   }
 `;

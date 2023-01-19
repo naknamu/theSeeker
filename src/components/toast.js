@@ -31,7 +31,7 @@ const Container = styled.div`
   justify-content: center;
   align-items: flex-start;
 
-  @media all and (max-width: 480px) { 
+  @media all and (max-width: 480px) {
     left: 40%;
   }
 `;

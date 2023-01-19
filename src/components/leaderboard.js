@@ -91,7 +91,7 @@ const Button = styled.button`
     border: 1px solid ${({ theme }) => theme.colors.primary};
   }
 
-  @media all and (max-width: 480px) { 
+  @media all and (max-width: 480px) {
     font-size: 16px;
   }
 `;
