@@ -14,27 +14,24 @@ const Main = (props) => {
   const [isCorrect, setIsCorrect] = useState(false);
 
   const onClickMap = (e) => {
-    setEnableBox(true);
-    
-    setMapClick(e.title);
+      setEnableBox(true);
+
+      setMapClick(e.title);
   };
 
   //test for mobile
-  const handleTouchMobile = (e) => {
-    // console.log(e);
-
-    setMapClick(e.title);
-
+  const onTouchMobile = (e) => {
+      setEnableBox(true);
+      setMapClick(e.title);
   }
 
-  
   const getCoordinates = (event) => {
     let e = event.target;
     let dim = e.getBoundingClientRect();
     var x = event.clientX - dim.left;
     var y = event.clientY - dim.top;
 
-    // console.table([x, y]);
+    console.table([x, y]);
     return [x, y];
   };
 
@@ -66,7 +63,7 @@ const Main = (props) => {
         responsive={true}
         parentWidth={width}
         onClickMap={(e) => onClickMap(e)}
-        onTouchStart={(e) => handleTouchMobile(e)}
+        onTouchEnd={(e) => onTouchMobile(e)}
       />
       {enableBox && (
         <TargetingBox
@@ -94,7 +91,7 @@ const MainWrapper = styled.main`
   left: 0;
 
   @media all and (max-width: 480px) {
-    -webkit-tap-highlight-color: transparent;
+
   }
 `;
 
