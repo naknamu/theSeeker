@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.js": "/theSeeker/static/js/main.360db5c3.js",
+    "main.js": "/theSeeker/static/js/main.8e309dcc.js",
     "static/media/ash.png": "/theSeeker/static/media/ash.6f4d612447ca735cdc46.png",
     "static/media/ghost_rider.png": "/theSeeker/static/media/ghost_rider.0d7221848bc21afc828a.png",
     "static/media/ryuk.png": "/theSeeker/static/media/ryuk.0b96cc08c3821cf92832.png",
     "index.html": "/theSeeker/index.html",
-    "main.360db5c3.js.map": "/theSeeker/static/js/main.360db5c3.js.map"
+    "main.8e309dcc.js.map": "/theSeeker/static/js/main.8e309dcc.js.map"
   },
   "entrypoints": [
-    "static/js/main.360db5c3.js"
+    "static/js/main.8e309dcc.js"
   ]
 }
