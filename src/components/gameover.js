@@ -9,26 +9,30 @@ const Gameover = (props) => {
     setUserInput(e.target.value);
   };
 
-  const submit = (e) => {
-    if (e.keyCode === 13) {
-      let userData = [...props.userDatabase];
-      let newData = {};
+  const handleSubmit = () => {
+    let userData = [...props.userDatabase];
+    let newData = {};
 
-      newData.name = userInput;
-      newData.time = props.time;
+    newData.name = userInput;
+    newData.time = props.time;
 
-      userData.push(newData);
+    userData.push(newData);
 
-      props.setUserDatabase(userData);
+    props.setUserDatabase(userData);
 
-      props.setIsGameOver(false);
+    props.setIsGameOver(false);
 
-      enableLeaderboard();
+    enableLeaderboard();
 
-      //STORE DATE TO FIRESTORE
-      PostFirestore(newData.name, newData.time);
-    }
+    //STORE DATE TO FIRESTORE
+    PostFirestore(newData.name, newData.time);
   };
+
+  const handleCancel = () => {
+    props.setIsGameOver(false);
+
+    enableLeaderboard();
+  }
 
   const enableLeaderboard = () => {
     props.setLeaderboard(true);
@@ -45,9 +49,13 @@ const Gameover = (props) => {
           id="username"
           placeholder="Enter your name"
           onChange={(e) => handleUserInput(e)}
-          onKeyDown={(e) => submit(e)}
+          onKeyDown={(e) => (e.key === "Enter") ? handleSubmit() : null}
           maxLength="12"
         />
+        <ButtonWrapper>
+          <Button onClick={() => handleSubmit()}>Submit</Button>
+          <Button onClick={() => handleCancel()}>Cancel</Button>
+        </ButtonWrapper>
       </Container>
     </Wrapper>
   );
@@ -90,6 +98,27 @@ const Input = styled.input`
   outline: none;
   font-size: 2rem;
   border-radius: 5px;
+`;
+
+const ButtonWrapper = styled.div`
+  display: flex;
+  gap: 2rem;
+`;
+
+const Button = styled.button`
+  padding: 1rem;
+  border-radius: 8px;
+  background-color: ${({ theme }) => theme.colors.primary};
+  color: ${({ theme }) => theme.colors.light};
+  border: 2px solid ${({ theme }) => theme.colors.light};
+  margin-top: 2rem;
+  font-size: 2rem;
+
+  :hover{
+    background-color: ${({ theme }) => theme.colors.light};
+    color: ${({ theme }) => theme.colors.primary};
+    border: 2px solid ${({ theme }) => theme.colors.primary};
+  }
 `;
 
 export default Gameover;

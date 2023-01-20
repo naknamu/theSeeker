@@ -20,8 +20,8 @@ const Main = (props) => {
 
   //test for mobile
   const handleTouchMobile = (e) => {
-    console.log(e);
-    
+    // console.log(e);
+
     setMapClick(e.title);
   }
 
@@ -32,7 +32,7 @@ const Main = (props) => {
     var x = event.clientX - dim.left;
     var y = event.clientY - dim.top;
 
-    console.table([x, y]);
+    // console.table([x, y]);
     return [x, y];
   };
 

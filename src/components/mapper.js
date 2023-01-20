@@ -13,7 +13,6 @@ const Mapper = (props) => {
     <ImageMapper
       src={URL}
       map={MAP}
-      stayHighlighted={true}
       responsive={props.responsive}
       parentWidth={props.parentWidth}
       onClick={props.onClickMap}

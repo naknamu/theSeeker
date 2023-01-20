@@ -27,7 +27,7 @@ const TargetingBox = (props) => {
 
       props.setStatus(newStatus);
     } else {
-      console.log("Keep seeking!");
+      // console.log("Keep seeking!");
       props.setIsCorrect(false);
     }
 
