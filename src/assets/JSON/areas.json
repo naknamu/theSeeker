@@ -37,5 +37,18 @@
       [35, 12008],
       [82, 12069]
     ]
+  },
+  {
+    "id": "Parent-Image-000",
+    "title": "Parent",
+    "shape": "rect",
+    "name": "0",
+    "fillColor": "rgba(255, 255, 255, 0)",
+    "strokeColor": "rgba(0, 0, 0, 0)",
+    "coords": [0, 0, 1999, 13110],
+    "rect": [
+      [0, 0],
+      [1999, 13110]
+    ]
   }
 ]

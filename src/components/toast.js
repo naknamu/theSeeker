@@ -4,7 +4,7 @@ const Toast = (props) => {
   const handleToastMessage = () => {
     switch (props.isCorrect) {
       case true:
-        return `You found ${props.mapClick}!`;
+        return `You found ${(props.mapClick === "Parent") ? "it" :  props.mapClick}!`;
       case false:
         return `Keep seeking!`;
       default:

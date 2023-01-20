@@ -15,6 +15,7 @@ const Main = (props) => {
 
   const onClickMap = (e) => {
     setEnableBox(true);
+    
     setMapClick(e.title);
   };
 
@@ -23,6 +24,7 @@ const Main = (props) => {
     // console.log(e);
 
     setMapClick(e.title);
+
   }
 
   
@@ -38,14 +40,16 @@ const Main = (props) => {
 
   //event is different from onClickMap 
   const onClickMain = (e) => {
-      let [x, y] = getCoordinates(e);
+    e.preventDefault();
 
-      let newPointClick = [];
-    
-      newPointClick.x = x;
-      newPointClick.y = y;
+    let [x, y] = getCoordinates(e);
+
+    let newPointClick = [];
   
-      setCursorClick(newPointClick);
+    newPointClick.x = x;
+    newPointClick.y = y;
+
+    setCursorClick(newPointClick);
   };
 
   useEffect(() => {
@@ -90,7 +94,7 @@ const MainWrapper = styled.main`
   left: 0;
 
   @media all and (max-width: 480px) {
-    /* -webkit-tap-highlight-color: transparent; */
+    -webkit-tap-highlight-color: transparent;
   }
 `;
 
