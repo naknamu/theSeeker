@@ -18,40 +18,51 @@ const Main = (props) => {
     setMapClick(e.title);
   };
 
+  //test for mobile
+  const handleTouchMobile = (e) => {
+    console.log(e);
+    
+    setMapClick(e.title);
+  }
+
+  
   const getCoordinates = (event) => {
     let e = event.target;
     let dim = e.getBoundingClientRect();
     var x = event.clientX - dim.left;
     var y = event.clientY - dim.top;
 
+    console.table([x, y]);
     return [x, y];
   };
 
+  //event is different from onClickMap 
   const onClickMain = (e) => {
-    let [x, y] = getCoordinates(e);
+      let [x, y] = getCoordinates(e);
 
-    let newPointClick = [];
-
-    newPointClick.x = x;
-    newPointClick.y = y;
-
-    setCursorClick(newPointClick);
+      let newPointClick = [];
+    
+      newPointClick.x = x;
+      newPointClick.y = y;
+  
+      setCursorClick(newPointClick);
   };
 
   useEffect(() => {
     if (enableToast) {
       setTimeout(() => {
         setEnableToast(false);
-      }, 1500);
+      }, 2000);
     }
   }, [enableToast]);
 
   return (
-    <MainWrapper onClick={(e) => onClickMain(e)}>
+    <MainWrapper onClick={(e) => onClickMain(e)} >
       <Mapper
         responsive={true}
         parentWidth={width}
         onClickMap={(e) => onClickMap(e)}
+        onTouchStart={(e) => handleTouchMobile(e)}
       />
       {enableBox && (
         <TargetingBox
@@ -77,6 +88,10 @@ const MainWrapper = styled.main`
   position: relative;
   top: 0px;
   left: 0;
+
+  @media all and (max-width: 480px) {
+    /* -webkit-tap-highlight-color: transparent; */
+  }
 `;
 
 export default Main;

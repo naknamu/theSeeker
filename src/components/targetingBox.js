@@ -33,6 +33,7 @@ const TargetingBox = (props) => {
 
     //disable targeting box
     props.setEnableBox(false);
+
   };
 
   return (
@@ -67,8 +68,8 @@ const StyledBox = styled.div`
   border: 1px solid ${({ theme }) => theme.colors.primary};
 
   left: ${(props) =>
-    props.point.x >= props.windowWidth - 230
-      ? props.windowWidth - 230 + "px"
+    props.point.x >= props.windowWidth - 190
+      ? props.windowWidth - 190 + "px"
       : props.point.x + "px"};
   top: ${(props) => props.point.y + "px"};
 

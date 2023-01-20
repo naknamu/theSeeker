@@ -163,8 +163,8 @@ const StartBtn = styled.button`
   }
 
   @media all and (max-width: 480px) {
-    font-size: 1.5rem;
-    padding: 0.5rem 1.5rem;
+    font-size: 3rem;
+    padding: 2rem;
   }
 `;
 

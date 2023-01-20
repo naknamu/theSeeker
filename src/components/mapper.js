@@ -17,6 +17,7 @@ const Mapper = (props) => {
       responsive={props.responsive}
       parentWidth={props.parentWidth}
       onClick={props.onClickMap}
+      onTouchStart={props.onTouchStart}
     />
   );
 };
