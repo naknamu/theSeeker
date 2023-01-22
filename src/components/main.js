@@ -15,11 +15,10 @@ const Main = (props) => {
 
   const onClickMap = (e) => {
     setEnableBox(true);
-
     setMapClick(e.title);
   };
 
-  //test for mobile
+  //touch input for mobile
   const onTouchMobile = (e) => {
     setEnableBox(true);
     setMapClick(e.title);
@@ -89,9 +88,6 @@ const MainWrapper = styled.main`
   position: relative;
   top: 0px;
   left: 0;
-
-  @media all and (max-width: 480px) {
-  }
 `;
 
 export default Main;

@@ -22,6 +22,7 @@ const Gameover = (props) => {
 
     props.setIsGameOver(false);
 
+    //when username is submitted, enable leaderboard
     enableLeaderboard();
 
     //STORE DATE TO FIRESTORE

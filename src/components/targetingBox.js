@@ -1,7 +1,9 @@
 import styled from "styled-components";
 
 const TargetingBox = (props) => {
+
   const onClickBox = (e) => {
+    //enable toast message regardless of user's answer
     props.setEnableToast(true);
 
     if (props.mapClick === e.target.textContent) {
@@ -24,10 +26,8 @@ const TargetingBox = (props) => {
         default:
           console.log("Error!");
       }
-
       props.setStatus(newStatus);
     } else {
-      // console.log("Keep seeking!");
       props.setIsCorrect(false);
     }
 
