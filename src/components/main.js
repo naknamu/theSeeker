@@ -14,16 +14,16 @@ const Main = (props) => {
   const [isCorrect, setIsCorrect] = useState(false);
 
   const onClickMap = (e) => {
-      setEnableBox(true);
+    setEnableBox(true);
 
-      setMapClick(e.title);
+    setMapClick(e.title);
   };
 
   //test for mobile
   const onTouchMobile = (e) => {
-      setEnableBox(true);
-      setMapClick(e.title);
-  }
+    setEnableBox(true);
+    setMapClick(e.title);
+  };
 
   const getCoordinates = (event) => {
     let e = event.target;
@@ -35,14 +35,14 @@ const Main = (props) => {
     return [x, y];
   };
 
-  //event is different from onClickMap 
+  //event is different from onClickMap
   const onClickMain = (e) => {
     e.preventDefault();
 
     let [x, y] = getCoordinates(e);
 
     let newPointClick = [];
-  
+
     newPointClick.x = x;
     newPointClick.y = y;
 
@@ -58,7 +58,7 @@ const Main = (props) => {
   }, [enableToast]);
 
   return (
-    <MainWrapper onClick={(e) => onClickMain(e)} >
+    <MainWrapper onClick={(e) => onClickMain(e)}>
       <Mapper
         responsive={true}
         parentWidth={width}
@@ -91,7 +91,6 @@ const MainWrapper = styled.main`
   left: 0;
 
   @media all and (max-width: 480px) {
-
   }
 `;
 

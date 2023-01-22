@@ -33,7 +33,6 @@ const TargetingBox = (props) => {
 
     //disable targeting box
     props.setEnableBox(false);
-
   };
 
   return (

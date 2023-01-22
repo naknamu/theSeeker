@@ -32,7 +32,7 @@ const Gameover = (props) => {
     props.setIsGameOver(false);
 
     enableLeaderboard();
-  }
+  };
 
   const enableLeaderboard = () => {
     props.setLeaderboard(true);
@@ -49,7 +49,7 @@ const Gameover = (props) => {
           id="username"
           placeholder="Enter your name"
           onChange={(e) => handleUserInput(e)}
-          onKeyDown={(e) => (e.key === "Enter") ? handleSubmit() : null}
+          onKeyDown={(e) => (e.key === "Enter" ? handleSubmit() : null)}
           maxLength="12"
         />
         <ButtonWrapper>
@@ -114,7 +114,7 @@ const Button = styled.button`
   margin-top: 2rem;
   font-size: 2rem;
 
-  :hover{
+  :hover {
     background-color: ${({ theme }) => theme.colors.light};
     color: ${({ theme }) => theme.colors.primary};
     border: 2px solid ${({ theme }) => theme.colors.primary};
