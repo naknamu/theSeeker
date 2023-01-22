@@ -49,3 +49,8 @@ You can check the live website [here!](https://naknamu.github.io/theSeeker/) :fi
 ### Back End Technologies
 
 - [Firebase](https://firebase.google.com/)
+
+## Credits
+
+Image is drawn by Egor Klyuchnyk.  
+You can visit his reddit profile [here](https://www.reddit.com/user/Chekavo/) and find lots of great art!
