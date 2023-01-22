@@ -2,7 +2,8 @@
 
 ## Description
 
-A [Wheres Waldo](https://en.wikipedia.org/wiki/Where's_Wally%3F) type of game where you find a character on a large picture with lots of characters.  
+A [Wheres Waldo](https://en.wikipedia.org/wiki/Where's_Wally%3F) type of game where you must locate a character in a large picture with lots of characters 
+in the fastest amount of time.  
 Did it make sense? 
 
 First full stack project I have created that uses the front end and back end technology.
